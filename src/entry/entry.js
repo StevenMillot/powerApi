@@ -1,10 +1,14 @@
-const { config } = require('./config')
-const { createApp } = require('./app')
+const express = require('express')
+const app = express()
 
-const app = createApp(config)
+const getRoute = require('../app')
+const { hostname, port } = require('../config/appConf')
 
-app.listen(config.port, config.hostname, () => {
-  console.log(`Serveur start on http://${config.hostname}:${config.port}`)
+
+getRoute.createRoute()
+
+
+
+app.listen(port, hostname, () => {
+  console.log(`Serveur start on http://${hostname}:${port}`)
 })
-
-// changer le package json pour lancer le entry.js

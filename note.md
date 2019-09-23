@@ -32,6 +32,3 @@ babel core + babel node
 et appler dans le package.json => babel-node
 
 
-
-// DIR ENTRY
-// Fonctionnement globale de mon application
