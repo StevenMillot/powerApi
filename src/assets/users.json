@@ -1,7 +1,7 @@
 {
-  "name" : "Steven Millot",
-  "login" : "steven",
-  "roles": ["admin", "user"],
-  "password" : "p4ssw0rd",
-  "id" : 1
+	"name": "Steven Millot",
+	"login": "steven",
+	"roles": ["admin", "user"],
+	"password": "p4ssw0rd",
+	"id": 1
 }

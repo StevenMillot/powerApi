@@ -1,4 +1,4 @@
-export default {
-  hostname = 'localhost',
-  port = 3000
+module.exports = {
+  hostname: 'localhost',
+  port: 3000
 }
