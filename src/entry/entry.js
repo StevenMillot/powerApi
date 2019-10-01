@@ -1,14 +1,36 @@
-const express = require('express')
-const app = express()
+// Il sert à définir le scenario de démarage de l'application:
+// récupération de la config, récupération du module serveur, puis enfin exécution du serveur.
 
-const getRoute = require('../app')
+const servCreator = require('../app')
 const { hostname, port } = require('../config/appConf')
 
 
-getRoute.createRoute()
+console.log('entry start')
+console.log(servCreator.servStart)
 
+servCreator.servStart(hostname, port)
 
+console.log('entry end')
 
-app.listen(port, hostname, () => {
-  console.log(`Serveur start on http://${hostname}:${port}`)
-})
+// const serv = servCreator.servStart()
+// let users = require('../assets/users.json')
+
+// /**
+//  * Configure la route '/'
+//  * pour envoyer le message json
+//  * log la date d'appel
+//  */
+// serv.get('/',
+//   (req, res) => {
+//     res.json({ message: 'Hello World !' })
+//     console.log('Time of \'/\' route call :', Date.now())
+//   })
+
+// /**
+//  * Configure la route '/user/me'
+//  * log la date d'appel
+//  */
+// serv.get('/user/me', (req, res) => {
+//   res.json({ users })
+//   console.log('Time of \'/user/me\' route call :', Date.now())
+// })

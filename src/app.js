@@ -1,29 +1,21 @@
-const express = require('express')
-const app = express()
+// Ce module est là pour contenir le code de ton serveur HTTP.
+// On doit pouvoir avec ce module démarrer un serveur HTTP avec les paramètres que l'on souhaite.
 
 module.exports = {
-  createRoute: () => {
+  servStart: (hostname, port) => {
 
-    let users = require('./assets/users.json')
+    const express = require('express')
+    const app = express()
 
-    /**
-     * Déclare ma route '/'
-     * envoie le message json
-     * log la date d'appel
-     */
-    app.get('/',
-      (req, res) => {
-        res.json({ message: 'Hello World !' })
-        console.log('Time of \'/\' route call :', Date.now())
-      })
+    console.log("in servStart")
+    // console.log(app)
 
-    /**
-     * Déclare ma route '/user/me'
-     * log la date d'appel
-     */
-    app.get('/user/me', (req, res) => {
-      res.json({ users })
-      console.log('Time of \'/user/me\' route call :', Date.now())
+    // Exécute le serveur
+    app.listen(hostname, port, () => {
+      console.log('in app.listen')
+      console.log(`Serveur start on http://${hostname}:${port}`)
     })
+
+    return app
   }
 };
