@@ -2,15 +2,13 @@
 // On doit pouvoir avec ce module démarrer un serveur HTTP avec les paramètres que l'on souhaite.
 const express = require('express')
 
-module.exports = {  
+module.exports = {
   servStart: (hostname, port) => {
 
     // Création de l'application
     const app = express()
-    
-
     // Configuration de l'application
-    let users = require('../assets/users.json')
+    let users = require('./assets/users.json')
 
     /**
      * Configure la route '/'
@@ -19,7 +17,6 @@ module.exports = {
      */
     app.get('/',
       (req, res) => {
-        req.header.autorization ==> 
         res.json({ message: 'Hello World !' })
         console.log('Time of \'/\' route call :', Date.now())
       })
