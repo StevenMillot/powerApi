@@ -4,11 +4,11 @@ function authenticate(login, password) {
     console.log(login, password)
 
     const user = users.find(u => {
-        console.log(u.username, u.password)
+        console.log(u.username, u.password) //steven p4ssw0rd
         u.username === login && u.password === password
     });
 
-    console.log(`userService => user -> ${user}`)
+    console.log(`userService => user -> ${user}`)//user in userService -> undefined
 
 
     if (user) {
