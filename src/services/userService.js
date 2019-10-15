@@ -8,7 +8,7 @@ function authenticate(login, password) {
         u.username === login && u.password === password
     });
 
-    console.log(`userService => user -> ${user}`)
+    console.log(`userService => user -> ${user}`) //user -> undefined
 
 
     if (user) {
