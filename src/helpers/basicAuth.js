@@ -7,10 +7,15 @@ const basicAuth = (req, res, next) => {
     }
 
     // verify auth credentials
-    const base64Credentials =  req.headers.authorization.split(' ')[1];
+    const base64Credentials = req.headers.authorization.split(' ')[1];
     const credentials = Buffer.from(base64Credentials, 'base64').toString('ascii');
+
     const [username, password] = credentials.split(':');
-    const user = userService.authenticate({ username, password });
+
+    const user = userService.authenticate(username, password);
+    console.log(`user after authentificate -> ${user}`)
+
+
     if (!user) {
         return res.status(401).json({ message: 'Invalid Authentication Credentials' });
     }
@@ -24,3 +29,5 @@ const basicAuth = (req, res, next) => {
 }
 
 module.exports = basicAuth;
+
+// console.log(`Auth send ${username} and ${password}`)
