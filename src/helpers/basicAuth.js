@@ -13,7 +13,8 @@ const basicAuth = (req, res, next) => {
     const [username, password] = credentials.split(':');
 
     const user = userService.authenticate(username, password);
-    console.log(`user after authentificate -> ${user}`)
+    console.log(`user after authentificate -> ${user} <boolean>`)
+    //user after authentificate -> undefined
 
 
     if (!user) {
