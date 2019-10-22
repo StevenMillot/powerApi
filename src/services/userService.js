@@ -1,32 +1,29 @@
 let users = require('../assets/users.json')
 
 function authenticate(login, password) {
-    console.log(login, password)
 
+    // user is ever find
     const user = users.find(u => {
             u.username === login && u.password === password
             return users
         })
 
-        console.log(`userService => user -> ${user}`)
-        console.log(user)
-
+    console.log(user)
 
     if (user) {
-        console.log('User OK')
-
-        // const { password, ...userWithoutPassword } = user;
-        // return userWithoutPassword;
+        console.log('Aceess granted')
+        const userWithoutPassword = delete user.password
+        return userWithoutPassword;
     } else {
         console.log('Aceess denied')
+        return false
     }
-
-    return user
 }
 
-// async function getAll() {
+// function getAll() {
 //     return users.map(u => {
 //         const { password, ...userWithoutPassword } = u;
+
 //         return userWithoutPassword;
 //     });
 // }
