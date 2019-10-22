@@ -4,11 +4,12 @@ function authenticate(login, password) {
     console.log(login, password)
 
     const user = users.find(u => {
-        console.log(u.username, u.password)
-        u.username === login && u.password === password
-    });
+            u.username === login && u.password === password
+            return users
+        })
 
-    console.log(`userService => user -> ${user}`) //user -> undefined
+        console.log(`userService => user -> ${user}`)
+        console.log(user)
 
 
     if (user) {
@@ -19,6 +20,8 @@ function authenticate(login, password) {
     } else {
         console.log('Aceess denied')
     }
+
+    return user
 }
 
 // async function getAll() {
