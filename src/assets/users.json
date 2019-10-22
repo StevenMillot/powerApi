@@ -7,7 +7,7 @@
 		"id": 1
 	},
 	{
-		"name": "Nicolas Devaux",
+		"name": "Nicolas Deveaud",
 		"username": "yoda",
 		"roles": ["admin", "user"],
 		"password": "p4ssw0rd",
